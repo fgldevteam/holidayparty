@@ -22,7 +22,7 @@
             <img src="/img/header.jpg" class="header" />
 
             <div class="content">
-            <span class="req">* = required field</span>
+                <form id="regform">
                 <table id="personal-table">
                         <tbody>
 
@@ -53,7 +53,7 @@
                             
                             <td colspan="2"> 
                                 <label id="label-adult-number">With Guest
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="guest" id="guest">
                                 </label>
                             </td>
                             <td></td>
@@ -71,13 +71,15 @@
                         <tr>
                             <td colspan="4">
                                 <center>
-                                <button type="button" class="btn">send</button>
+                                <button type="button" id="submit" class="btn">send</button>
                                 </center>
                             </td>
                         </tr>                 
                         
 
                     </tbody></table>
+                    </form>
+           <!--          <span class="req">* required</span> -->
     
             </div>
 
