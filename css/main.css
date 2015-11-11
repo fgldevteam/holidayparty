@@ -200,3 +200,36 @@ input[type="radio"]:checked:after {
 
 .hide{ display: none !important; }
 .show { display: block !important; }
+
+
+.btn {
+	margin: 0 auto;
+  background: #ae7c38;
+  background-image: -webkit-linear-gradient(top, #ae7c38, #e6d398);
+  background-image: -moz-linear-gradient(top, #ae7c38, #e6d398);
+  background-image: -ms-linear-gradient(top, #ae7c38, #e6d398);
+  background-image: -o-linear-gradient(top, #ae7c38, #e6d398);
+  background-image: linear-gradient(to bottom, #ae7c38, #e6d398);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  text-shadow: 1px 1px 3px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  padding: 14px;
+  border: solid #ae7c38 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: #e6d398;
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #e6d398, #ae7c38);
+  background-image: -moz-linear-gradient(top, #e6d398, #ae7c38);
+  background-image: -ms-linear-gradient(top, #e6d398, #ae7c38);
+  background-image: -o-linear-gradient(top, #e6d398, #ae7c38);
+  background-image: linear-gradient(to bottom, #e6d398, #ae7c38);
+  text-decoration: none;
+}
