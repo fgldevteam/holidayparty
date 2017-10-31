@@ -57,7 +57,7 @@ $(document).ready(function() {
    				  guest: guestVal
    				},
    					function(data){
-   						$("#regform").before("<div id='thankyou'><center><img src='/img/thankyou.png' /></center></div>");	
+   						$("#regform").before("<div id='thankyou'><center><img src='/img/thankyou2.png' /></center></div>");	
 
 						$("#regform").fadeOut("normal", function() {				  						
 							$( "#thankyou" ).fadeIn( "slow", function() {											

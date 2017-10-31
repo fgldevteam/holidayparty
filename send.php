@@ -1,9 +1,9 @@
 <?php
 
 //connect to DB
-$host = "127.0.0.1";
-$user = "root";
-$pass = "";
+$host = "calmys1db01.fglsports.dmz";
+$user = "holidayparty";
+$pass = "holidayparty";
 $db = "holidayparty";
 
 $connection = mysqli_connect($host, $user, $pass, $db);
