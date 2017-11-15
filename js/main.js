@@ -48,7 +48,7 @@ $(document).ready(function() {
 			//$("#sendEmail li.buttons").append('<img src="img/loading.gif" alt="Loading" id="loading" />');
 			$(this).hide();
 			$("#sendemail").append('<img style="height: 15px; width: 128px;" src="/img/ajax-loader.gif" alt="Sending" id="sending" />');
-			console.log( fnameVal + ", "+ lnameVal + ", "+ emailVal + ", "+ dietVal + ", "+ guestVal);
+			//console.log( fnameVal + ", "+ lnameVal + ", "+ emailVal + ", "+ dietVal + ", "+ guestVal);
 			$.post("send.php",
    				{ fname: fnameVal,
    				  lname: lnameVal, 
@@ -70,5 +70,78 @@ $(document).ready(function() {
 		
 		return false;
 	});
+
+
+
+	$("#checkregbutton").click(function(){
+		return false;
+	});
+
+	$("#checkregbutton").click(function(){					   				   
+		$(".error").hide();
+		$("label").css('color', '#fff');
+
+		var hasErrorCheck = false;
+		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		
+		var checkemailVal = $("#checkemail").val();
+	
+		if(checkemailVal == '') {
+			$("#label-checkemail").css('color', '#c00')
+			hasErrorCheck = true;
+		} else if(!emailReg.test(checkemailVal)) {	
+			$("#label-checkemail").css('color', '#c00')
+			hasErrorCheck = true;
+		}	
+
+
+					
+		if(hasErrorCheck == false) {
+			
+			$(this).hide();
+			
+			$.post("checkreg.php",
+   				{
+   				  email: checkemailVal,
+   				},
+   					function(data){
+
+   						//console.log("data?" + data);
+   						resp = JSON.parse(data);
+//   						console.log(resp);
+
+   						if(resp.length > 0){
+
+   							var datastring;
+   							$(resp).each(function(index, value){
+ //  								console.log(value);
+   								datastring = value.first + " " + value.last + "<br />";
+   								datastring += value.email + "<br />";
+   								datastring += "Guest: " + value.guest + "<br />";
+   								datastring += "Dietary Restrictions: " + value.diet;
+   							});
+
+   							$("#checkreg").before("<div id='regresults'><center><p>"+datastring+"</p></center></div>");	
+
+							$("#checkreg").fadeOut("normal", function() {				  						
+								$( "#regresults" ).fadeIn( "slow", function() {											
+								   
+								});											
+							});
+   						} else {
+							$("#checkreg").before("<div id='regresults'><center><h2>No Registration Found...</h2><p>Please re-register</p></center></div>");	
+							$("#checkreg").fadeOut("normal", function() {				  						
+								$( "#regresults" ).fadeIn( "slow", function() {											
+								   
+								});											
+							});						
+   						}
+   						
+   					}
+				 );
+		}			
+		
+		return false;
+	});	
 
 });	
