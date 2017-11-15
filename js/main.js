@@ -99,15 +99,15 @@ $(document).ready(function() {
 		if(hasErrorCheck == false) {
 			
 			$(this).hide();
-			
-			$.post("checkreg.php",
-   				{
-   				  email: checkemailVal,
-   				},
-   					function(data){
 
+			$.ajax({
+			    url: "checkreg.php",
+			    data: {
+			        email: checkemailVal
+			    },
+			    success: function(data) {
    						//console.log("data?" + data);
-   						resp = JSON.parse(data);
+   						resp = $.parseJSON(data);
 //   						console.log(resp);
 
    						if(resp.length > 0){
@@ -136,9 +136,10 @@ $(document).ready(function() {
 								});											
 							});						
    						}
-   						
-   					}
-				 );
+			    }
+			});		
+
+
 		}			
 		
 		return false;
