@@ -1,15 +1,15 @@
 <?php
 
 //connect to DB
-//$host = "calmys1db01.fglsports.dmz";
-// $user = "holidayparty";
-// $pass = "holidayparty";
-// $db = "holidayparty";
-
-$host = "127.0.0.1";
-$user = "root";
-$pass = "root";
+$host = "calmys1db01.fglsports.dmz";
+$user = "holidayparty";
+$pass = "holidayparty";
 $db = "holidayparty";
+
+// $host = "127.0.0.1";
+// $user = "root";
+// $pass = "root";
+// $db = "holidayparty";
 
 //$connection = mysqli_connect($host, $user, $pass, $db);
 $email = $_REQUEST['email'];
